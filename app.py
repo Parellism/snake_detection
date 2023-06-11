@@ -5,16 +5,7 @@ from skimage.io import imread
 from PIL import Image
 from tensorflow.keras.models import load_model
 
-page_bg_img = """
-<style>
-[data-testid-"stAppViewContainer"] {
-background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQesuS4zrN__rOO_oQvAuTV2yeLZAjiVs2GXA&usqp=CAU");
-background-size: cover;
-}
-</style>
-"""
 
-st.markdown(page_bg_img, unsafe_allow_html=True)
 st.title('Snake Detection')
 st.text('Upload Image')
 
