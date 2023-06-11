@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 from skimage.io import imread
-from PIL import Image, ImageOps
+from PIL import Image
 from tensorflow.keras.models import load_model
 
 
@@ -19,7 +19,7 @@ if uploaded_file is not None:
 
 	if st.button('PREDICT'):
 		img_array = np.array(img)
-		img_resized = ImageOps.resize(img_array, (224, 224))
+		img_resized = img.resize((224, 224))
 		img_resized = np.expand_dims(img_resized, axis=0)
 		y_out = model.predict(img_resized)
 		y_out = np.argmax(y_out, axis=1)
