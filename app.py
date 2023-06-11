@@ -8,7 +8,7 @@ from tensorflow.keras.models import load_model
 page_bg_img = """
 <style>
 [data-testid-"stAppViewContainer"] {
-background-image: url("https://previews.123rf.com/images/galimovma79/galimovma791605/galimovma79160500035/58812889-snake-skin-texture-seamless-pattern-black-on-white-background.jpg");
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQesuS4zrN__rOO_oQvAuTV2yeLZAjiVs2GXA&usqp=CAU");
 background-size: cover;
 }
 </style>
