@@ -19,8 +19,8 @@ if uploaded_file is not None:
 
 	if st.button('PREDICT'):
 		img_array = np.array(img)
-        	img_resized = ImageOps.resize(img_array, (224, 224))
-        	img_resized = np.expand_dims(img_resized, axis=0)
+		img_resized = ImageOps.resize(img_array, (224, 224))
+		img_resized = np.expand_dims(img_resized, axis=0)
 		y_out = model.predict(img_resized)
 		y_out = np.argmax(y_out, axis=1)
 		class_names = ['non-venomous', 'venomous']
