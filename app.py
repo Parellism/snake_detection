@@ -27,7 +27,7 @@ if uploaded_file is not None:
 		predicted_class = class_names[y_out[0]]
 		plt.imshow(img_resized[0])
 		plt.show()
-		print(f'This snake is {predicted_class}')
+		st.text(f'This snake is {predicted_class}')
                 
 # #Split data into Training and testing
 # from sklearn.model_selection import train_test_split
