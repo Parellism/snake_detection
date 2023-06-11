@@ -5,19 +5,6 @@ from skimage.io import imread
 from PIL import Image
 from tensorflow.keras.models import load_model
 
-background_image_url = "https://png.pngtree.com/background/20220725/original/pngtree-seamless-pattern-with-colorful-snakes-and-leaves-picture-image_1771278.jpg"
-def set_background_image_style(url):
-    style = f"""
-    <style>
-    body {{
-        background-image: url("{url}");
-        background-size: cover;
-    }}
-    </style>
-    """
-    return style
-st.markdown(set_background_image_style(background_image_url), unsafe_allow_html=True)
-
 st.title('Snake Detection')
 st.text('Upload Image')
 
