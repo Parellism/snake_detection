@@ -2,12 +2,11 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 from skimage.io import imread
-from skimage.transform import resize
+from PIL import Image, ImageOps
 from tensorflow.keras.models import load_model
-from PIL import Image
 
 
-st.title('Ular berbisa atau bukan ?')
+st.title('Snake Detection')
 st.text('Upload Image')
 
 model = load_model('model/keras_model.h5')
@@ -19,8 +18,9 @@ if uploaded_file is not None:
 	st.image(img,caption='Uploaded Image')
 
 	if st.button('PREDICT'):
-		img_resized = resize(img, (224, 224, 3))
-		img_resized = np.expand_dims(img_resized, axis=0)
+		img_array = np.array(img)
+        	img_resized = ImageOps.resize(img_array, (224, 224))
+        	img_resized = np.expand_dims(img_resized, axis=0)
 		y_out = model.predict(img_resized)
 		y_out = np.argmax(y_out, axis=1)
 		class_names = ['non-venomous', 'venomous']
